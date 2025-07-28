@@ -9,13 +9,24 @@
 <body>
     <header>
         <h1>RAG Communicator</h1>
-        <div class="theme-switch-wrapper">
-            <label class="theme-switch" for="checkbox">
-                <input type="checkbox" id="checkbox" />
-                <div class="slider round"></div>
-            </label>
+        <div class="header-controls">
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
+            <div id="settings-btn" class="settings-icon">⚙️</div>
         </div>
     </header>
+    <div id="settings-panel" class="hidden">
+        <h3>Settings</h3>
+        <div class="setting">
+            <label for="server-url">Server URL:</label>
+            <input type="text" id="server-url" value="ws://localhost:8080">
+        </div>
+        <button id="save-settings-btn">Save</button>
+    </div>
     <div class="container">
         <div class="background-container">
             <div class="log-window">
@@ -26,7 +37,10 @@
                 <button id="clear-log-btn">Clear Logs</button>
             </div>
             <div class="chat-window">
-                <h2>Chat</h2>
+                <div class="chat-header">
+                    <h2>Chat</h2>
+                    <span id="connection-status" class="status-disconnected" title="Disconnected"></span>
+                </div>
                 <div id="chat-messages" class="content">
                     <!-- Chat messages will be displayed here -->
                 </div>

@@ -21,9 +21,53 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    text-align: center;
-    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 70px;
 }
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.settings-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#settings-panel {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 10;
+    transition: transform 0.3s ease-in-out;
+}
+
+#settings-panel.hidden {
+    transform: translateY(-150%);
+}
+
+.setting {
+    margin-bottom: 1rem;
+}
+
+.setting label {
+    margin-right: 0.5rem;
+}
+
+.setting input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
 
 .background-container {
     display: flex;
@@ -43,6 +87,32 @@ header {
     display: flex;
     flex-direction: column;
     border-right: 1px solid #ccc;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#connection-status {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.status-disconnected {
+    background-color: #e74c3c; /* red */
+}
+
+.status-connecting {
+    background-color: #f1c40f; /* yellow */
+}
+
+.status-connected {
+    background-color: #2ecc71; /* green */
 }
 
 .chat-window {
@@ -188,9 +258,7 @@ body.dark-mode .rag-message {
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
-    position: absolute;
-    top: 15px;
-    right: 15px;
+    /* remove absolute positioning */
 }
 
 .theme-switch {

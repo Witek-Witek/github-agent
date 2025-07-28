@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const logContent = document.getElementById('log-content');
     const clearLogBtn = document.getElementById('clear-log-btn');
     const themeSwitch = document.getElementById('checkbox');
+    const settingsBtn = document.getElementById('settings-btn');
+    const settingsPanel = document.getElementById('settings-panel');
 
     // Function to toggle dark mode
     function toggleDarkMode(isDarkMode) {
@@ -93,6 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
     clearLogBtn.addEventListener('click', () => {
         logContent.innerHTML = '';
         addLog('Logs cleared.');
+    });
+
+    settingsBtn.addEventListener('click', () => {
+        settingsPanel.classList.toggle('hidden');
     });
 
     // Initial log
