@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Communicator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>RAG Communicator</h1>
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round"></div>
+            </label>
+        </div>
+    </header>
+    <div class="container">
+        <div class="background-container">
+            <div class="log-window">
+                <h2>Logs</h2>
+                <div id="log-content" class="content">
+                    <!-- Log content will be displayed here -->
+                </div>
+                <button id="clear-log-btn">Clear Logs</button>
+            </div>
+            <div class="chat-window">
+                <h2>Chat</h2>
+                <div id="chat-messages" class="content">
+                    <!-- Chat messages will be displayed here -->
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="user-query" placeholder="Type your query here...">
+                    <button id="send-btn">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
